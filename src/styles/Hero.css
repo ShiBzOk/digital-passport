@@ -1,0 +1,114 @@
+.hero {
+  min-height: 420px;
+
+  border-bottom: 1px solid black;
+
+  padding: 4rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+
+
+.hero-left {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.hero-left h1 {
+  font-size: 5.5rem;
+  line-height: 0.9;
+
+  font-family: "Archivo Black", sans-serif;
+
+  margin-bottom: 2rem;
+}
+
+
+
+.hero-left span {
+  color: transparent;
+  -webkit-text-stroke: 2px black;
+}
+
+
+.hero-left > p {
+  margin-top: 2rem;
+
+  letter-spacing: 4px;
+  font-size: 0.75rem;
+}
+
+
+
+.hero-nav {
+  display: flex;
+  gap: 3rem;
+
+  margin-top: 3rem;
+
+  flex-wrap: wrap;
+}
+
+.hero-nav p {
+  font-size: 0.75rem;
+  letter-spacing: 3px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  white-space: nowrap;
+}
+
+.hero-right {
+  width: 320px;
+}
+
+.hero-right label {
+  display: block;
+
+  margin-bottom: 1rem;
+
+  font-size: 0.7rem;
+  font-weight: bold;
+
+  letter-spacing: 2px;
+}
+
+.hero-right input {
+  width: 100%;
+
+  border: none;
+  border-bottom: 1px solid black;
+
+  background: transparent;
+
+  padding-bottom: 1rem;
+
+  outline: none;
+}
+
+.filters {
+  margin-top: 2rem;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.filters button {
+  border: 1px solid black;
+
+  background: transparent;
+
+  padding: 0.7rem 1rem;
+
+  font-size: 0.7rem;
+  font-weight: bold;
+
+  cursor: pointer;
+}
+

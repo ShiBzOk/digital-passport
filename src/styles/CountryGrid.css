@@ -1,0 +1,47 @@
+.countries-section {
+  padding: 4rem;
+}
+
+.countries-section h2 {
+  font-size: 3rem;
+
+  margin-bottom: 3rem;
+
+  font-family: "Archivo Black", sans-serif;
+}
+
+.country-grid {
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(320px, 350px));
+
+  gap: 2rem;
+}
+
+.load-more-container {
+  display: flex;
+  justify-content: center;
+
+  margin-top: 4rem;
+}
+
+.load-more-btn {
+  padding: 1rem 2rem;
+
+  border: 2px solid black;
+
+  background: white;
+
+  cursor: pointer;
+
+  font-weight: bold;
+
+  transition: 0.2s ease;
+}
+
+.load-more-btn:hover {
+  transform: translate(-3px, -3px);
+
+  box-shadow: 6px 6px 0px black;
+}
+
