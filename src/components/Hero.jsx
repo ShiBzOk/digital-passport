@@ -1,6 +1,8 @@
 import "../styles/Hero.css";
 
-function Hero() {
+function Hero({ query, setQuery, region, setRegion }) {
+  const regions = ["all", "africa", "americas", "asia", "europe", "oceania"];
+
   return (
     <section className="hero">
       <div className="hero-left">
@@ -22,16 +24,32 @@ function Hero() {
       <div className="hero-right">
         <label>SEARCH DATABASE</label>
 
-        <input type="text" placeholder="Type country name..." />
+        <input
+          type="text"
+          placeholder="Type country name..."
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+        />
+
+        {query.trim().length > 0 && query.trim().length < 3 && (
+          <p style={{ fontSize: "0.7rem", opacity: 0.5, marginTop: "0.5rem" }}>
+            Skriv minst 3 bokstäver...
+          </p>
+        )}
 
         <div className="filters">
-          <button>WORLD</button>
-
-          <button>AFRICA</button>
-
-          <button>ASIA</button>
-
-          <button>EUROPE</button>
+          {regions.map((r) => (
+            <button
+              key={r}
+              onClick={() => setRegion(r)}
+              style={{
+                background: region === r ? "black" : "transparent",
+                color: region === r ? "white" : "black",
+              }}
+            >
+              {r === "all" ? "WORLD" : r.toUpperCase()}
+            </button>
+          ))}
         </div>
       </div>
     </section>
@@ -39,4 +57,3 @@ function Hero() {
 }
 
 export default Hero;
-
