@@ -1,0 +1,63 @@
+.sidebar {
+  width: 55px;
+  height: 100vh;
+
+  border-right: 1px solid black;
+
+  position: fixed;
+  left: 0;
+  top: 0;
+
+  background: #f3f0ea;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 2rem 0;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+
+  border-radius: 50%;
+
+  background: black;
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-weight: bold;
+}
+
+.sidebar-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7rem;
+}
+
+.sidebar-links p {
+  transform: rotate(-90deg);
+
+  font-size: 0.7rem;
+  letter-spacing: 3px;
+
+  white-space: nowrap;
+
+  width: 120px;
+  text-align: center;
+}
+
+.version {
+  transform: rotate(-90deg);
+
+  font-size: 0.7rem;
+
+  white-space: nowrap;
+}
+
