@@ -95,13 +95,9 @@
 
 .buttons button {
   border: 1px solid black;
-
   background: transparent;
-
   padding: 1rem;
-
   cursor: pointer;
-
   font-weight: bold;
 }
 
@@ -109,3 +105,12 @@
   flex: 1;
 }
 
+.buttons button.stamped-active {
+  background: black;
+  color: white;
+}
+
+.buttons button.star-active {
+  background: black;
+  color: white;
+}

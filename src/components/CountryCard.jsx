@@ -1,6 +1,13 @@
 import "../styles/CountryCard.css";
 
-function CountryCard({ country, onSelect }) {
+function CountryCard({ 
+  country, 
+  onSelect, 
+  isStamped, 
+  isWishlisted, 
+  onToggleStamp, 
+  onToggleWishlist 
+}) {
   return (
     <article className="country-card" onClick={() => onSelect(country)}>
       <div className="flag-container">
@@ -23,8 +30,25 @@ function CountryCard({ country, onSelect }) {
         </div>
 
         <div className="buttons">
-          <button onClick={(e) => e.stopPropagation()}>STÄMPLA</button>
-          <button onClick={(e) => e.stopPropagation()}>☆</button>
+          <button 
+            className={isStamped ? "stamped-active" : ""}
+            onClick={(e) => {
+              e.stopPropagation();
+              onToggleStamp(country.cca3);
+            }}
+          >
+            {isStamped ? "STÄMPLAD" : "STÄMPLA"}
+          </button>
+          
+          <button 
+            className={isWishlisted ? "star-active" : ""}
+            onClick={(e) => {
+              e.stopPropagation();
+              onToggleWishlist(country.cca3);
+            }}
+          >
+            {isWishlisted ? "★" : "☆"}
+          </button>
         </div>
       </div>
     </article>
