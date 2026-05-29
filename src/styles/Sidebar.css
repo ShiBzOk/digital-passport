@@ -24,8 +24,8 @@
 
   border-radius: 50%;
 
-  background: black;
-  color: white;
+  background: transparent;
+  color: black;
 
   display: flex;
   align-items: center;
