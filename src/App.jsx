@@ -58,6 +58,9 @@ function App() {
       list = list.filter((id) => id !== cca3);
     } else {
       list.push(cca3);
+      if (wishlist.includes(cca3)) {
+        handleToggleWishlist(cca3);
+      }
     }
     setStamped(list);
     localStorage.setItem("stampedCountries", JSON.stringify(list));
