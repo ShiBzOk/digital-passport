@@ -73,8 +73,13 @@ function App() {
       const trimmed = query.trim();
       if (trimmed.length > 0 && trimmed.length < 3) return true;
  
-      const matchesQuery = country.name.common.toLowerCase().includes(trimmed.toLowerCase());
-      const matchesRegion = region === "all" || country.region.toLowerCase() === region.toLowerCase();
+      const matchesQuery = country.name.common
+      .toLowerCase()
+      .includes(trimmed.toLowerCase());
+
+
+      const matchesRegion = region === "all" || 
+      country.region.toLowerCase() === region.toLowerCase();
  
       if (view === "passport" && !stamped.includes(country.cca3)) return false;
       if (view === "bucketlist" && !wishlist.includes(country.cca3)) return false;
