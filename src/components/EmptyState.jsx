@@ -1,4 +1,3 @@
-import React from 'react';
 import '../styles/EmptyState.css';
 
 export default function EmptyState({ onReset }) {
