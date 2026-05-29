@@ -1,6 +1,6 @@
 import "../styles/Hero.css";
 
-function Hero({ query, setQuery, region, setRegion }) {
+function Hero({ query, setQuery, region, setRegion, view, setView }) {
   const regions = ["all", "africa", "americas", "asia", "europe", "oceania"];
 
   return (
@@ -15,9 +15,24 @@ function Hero({ query, setQuery, region, setRegion }) {
         <p>DIGITAL TRAVEL LOGBOOK / UNIVERSITY PROJECT</p>
 
         <div className="hero-nav">
-          <p>EXPLORE</p>
-          <p>PASSPORT</p>
-          <p>BUCKET LIST</p>
+          <p 
+            onClick={() => setView("explore")} 
+            style={{ fontWeight: view === "explore" ? "800" : "400", cursor: "pointer" }}
+          >
+            EXPLORE
+          </p>
+          <p 
+            onClick={() => setView("passport")} 
+            style={{ fontWeight: view === "passport" ? "800" : "400", cursor: "pointer" }}
+          >
+            PASSPORT
+          </p>
+          <p 
+            onClick={() => setView("bucketlist")} 
+            style={{ fontWeight: view === "bucketlist" ? "800" : "400", cursor: "pointer" }}
+          >
+            BUCKET LIST
+          </p>
         </div>
       </div>
 
@@ -47,7 +62,7 @@ function Hero({ query, setQuery, region, setRegion }) {
                 color: region === r ? "white" : "black",
               }}
             >
-              {r === "all" ? "WORLD" : r.toUpperCase()}
+              {r === "all" ? "ALL_WORLD" : r.toUpperCase()}
             </button>
           ))}
         </div>
