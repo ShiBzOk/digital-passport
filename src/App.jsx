@@ -71,22 +71,20 @@ function App() {
   const filteredCountries = countries
     .filter((country) => {
       const trimmed = query.trim();
-      if (trimmed.length > 0 && trimmed.length < 3) return true;
- 
-      const matchesQuery = country.name.common
-      .toLowerCase()
-      .includes(trimmed.toLowerCase());
 
+      const matchesView = view === "explore" || 
+        (view === "passport" && stamped.includes(country.cca3)) || 
+        (view === "bucketlist" && wishlist.includes(country.cca3));
 
       const matchesRegion = region === "all" || 
-      country.region.toLowerCase() === region.toLowerCase();
- 
-      if (view === "passport" && !stamped.includes(country.cca3)) return false;
-      if (view === "bucketlist" && !wishlist.includes(country.cca3)) return false;
- 
-      return matchesQuery && matchesRegion;
+        country.region.toLowerCase() === region.toLowerCase();
+
+      const matchesQuery = trimmed.length < 3 || 
+        country.name.common.toLowerCase().includes(trimmed.toLowerCase());
+
+      return matchesView && matchesRegion && matchesQuery;
     })
-    .sort((a, b) => a.name.common.localeCompare(b.name.common));
+  .sort((a, b) => a.name.common.localeCompare(b.name.common));
  
   function handleResetDirectory() {
     setQuery("");

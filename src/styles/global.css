@@ -34,3 +34,79 @@ input {
 }
 
 
+
+@media (max-width: 1024px) {
+  .hero {
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .hero-left h1 {
+    font-size: 4rem;
+  }
+
+  .hero-right {
+    width: 100%;
+    max-width: 500px;
+  }
+
+  .country-grid {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+
+  .main-content {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .hero {
+    padding: 2rem;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .hero-left h1 {
+    font-size: 3rem;
+  }
+
+  .hero-left > p {
+    font-size: 0.65rem;
+    letter-spacing: 2px;
+  }
+
+  .hero-nav {
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .hero-nav p {
+    font-size: 0.65rem;
+  }
+
+  .hero-right {
+    width: 100%;
+  }
+
+  .countries-section {
+    padding: 2rem;
+  }
+
+  .country-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .country-card {
+    width: 100%;
+    max-width: 350px;
+  }
+}
+
+
