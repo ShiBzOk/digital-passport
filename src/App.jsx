@@ -6,7 +6,7 @@ import CountryCard from "./components/CountryCard";
 import CountryPanel from "./components/CountryPanel";
 import EmptyState from "./components/EmptyState";
  
-import { getStampedCountries, getWishlistCountries, saveStampedCountries, saveWishlistCountries } from "./utils/Storage";
+import { getStampedCountries, getWishlistCountries, saveStampedCountries, saveWishlistCountries } from "./utils/storage";
  
 import "./styles/CountryCard.css";
 import "./styles/CountryGrid.css";
