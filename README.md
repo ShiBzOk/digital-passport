@@ -88,7 +88,7 @@ https://restcountries.com/v3.1/all?fields=name,capital,region,maps,population,ti
 
 User data is stored in localStorage under two keys:
 - `stampedCountries` – array of visited country codes (e.g. `["SWE", "JPN"]`)
-- `wishlistCountries` – array of bucket list country codes
+- `wishlistCountries` – array of bucket list country codes 
 
 
 ---
@@ -104,25 +104,18 @@ User data is stored in localStorage under two keys:
 ---
 ## Framework Comparison
 
-We chose React over other popular frameworks. Here is a brief comparison:
 
-| | React | Vue | Angular |
-|---|---|---|---|
-| **Type** | Library | Framework | Full framework |
-| **Learning curve** | Medium | Low | High |
-| **Maintained by** | Meta | Community | Google |
-| **Usage (2024)** | 39.5% | 15.4% | 17.1% |
-| **Best for** | Flexible UI components | Beginner-friendly apps | Large enterprise apps |
+***Why not Vue? Vue is known for being easy to learn and beginner friendly. Compared to React, it has a smaller ecosystem and is used less frequently in the industry, which means there are fewer libraries, resources, and community support available [1].
 
-**Why not Vue?** Vue is beginner-friendly and has a lower learning curve, but has a smaller ecosystem and is less common in the industry compared to React.
+***Why not Angular? Angular is a powerful framework with many built-in features, but it has a steeper learning curve than React. For this project, it would have added unnecessary depth and more functionality than we needed [1].
 
-**Why not Angular?** Angular is a full framework with built-in solutions for everything, but it has a steep learning curve and is considered overkill for a project of this size.
+***Why React? We chose React because it provides a good balance between simplicity and flexibility. According to the Stack Overflow Developer Survey 2025, React is one of the most common web libraries and frameworks among developers according to the Stack Overflow Developer Survey 2025 [1]. It also has a detailed documentation and community support. 
 
-**Why React?** React strikes the right balance, it is the most widely used library according to the Stack Overflow Developer Survey 2024 [1], it has a large ecosystem, and it is the framework we studied during this course. 
+Another important reason is that React was the library used during this course, allowing us to build on the knowledge we had already gained. This also helped us continue our learning, as we are still new to the framework.
+
+Also becoming more familiar and comfortable with React improves our preparation for real world software development after graduation. One of the main goals of this project was not only to build an application from scratch, but also to strengthen and broaden our existing knowledge while gaining experience with new and industry relevant technologies, Using React allowed us to achieve both these goals.
 
 ---
 
-## References
-
-[1] Stack Overflow, "Stack Overflow Developer Survey 2024," Stack Overflow, 2024. [Online]. Available: https://survey.stackoverflow.co/2024/technology#most-popular-technologies-webframe. [Accessed: 31 May 2025].
-
+References
+[1] Stack Overflow, "Stack Overflow Developer Survey 2025," Stack Overflow, 2025. [Online]. Available: https://survey.stackoverflow.co/2025/technology#most-popular-technologies-webframe .
