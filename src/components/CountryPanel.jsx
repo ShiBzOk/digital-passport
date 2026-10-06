@@ -1,4 +1,4 @@
-import "../styles/CountryPanel.css";
+import "../styles/Countrypanel.css";
 
 function CountryPanel({ country, onClose }) {
   if (!country) return null;
