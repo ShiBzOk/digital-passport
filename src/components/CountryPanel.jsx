@@ -1,4 +1,4 @@
-import "../styles/CountryPanel.css";
+import "../styles/Countrypanel.css";
 
 function CountryPanel({ country, onClose }) {
   if (!country) return null;
@@ -11,12 +11,12 @@ function CountryPanel({ country, onClose }) {
         <span className="subtitle-top">CURRENT DATA EXTRACT</span>
         
         <div className="title-wrapper">
-          <h2>{country.name.common}</h2>
-          <span className="country-code-badge">{country.cca3}</span>
+          <h2>{country.names?.common}</h2>
+          <span className="country-code-badge">{country.codes?.alpha_3}</span>
         </div>
 
         <div className="flag-box">
-          <img src={country.flags.svg} alt={country.name.common} />
+          <img src={country.flag?.url_svg} alt={country.names?.common} />
         </div>
 
         <div className="panel-info">
@@ -26,11 +26,11 @@ function CountryPanel({ country, onClose }) {
           </div>
           <div>
             <span>CAPITAL</span>
-            <p className="italic-heavy">{country.capital?.[0] || "No Capital"}</p>
+            <p className="italic-heavy">{country.capitals?.[0]?.name || "No Capital"}</p>
           </div>
           <div>
             <span>POPULATION</span>
-            <p className="heavy">{country.population.toLocaleString()}</p>
+            <p className="heavy">{country.population?.toLocaleString()}</p>
           </div>
           <div>
             <span>TIMEZONE</span>
@@ -40,14 +40,14 @@ function CountryPanel({ country, onClose }) {
             <span>CURRENCY</span>
             <p className="heavy">
               {country.currencies
-                ? `${Object.values(country.currencies)[0]?.name} (${Object.values(country.currencies)[0]?.symbol})`
+                ? `${country.currencies[0]?.name} (${country.currencies[0]?.symbol})`
                 : "Unknown"}
             </p>
           </div>
         </div>
 
-        {country.maps?.googleMaps && (
-          <a href={country.maps.googleMaps} target="_blank" rel="noreferrer">
+        {country.links?.google_maps && (
+          <a href={country.links.google_maps} target="_blank" rel="noreferrer">
             <button className="panel-map-btn">
               <span>ÖPPNA KARTA</span>
               <span>→</span>

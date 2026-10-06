@@ -11,12 +11,12 @@ function CountryCard({
   return (
     <article className="country-card" onClick={() => onSelect(country)}>
       <div className="flag-container">
-        <img src={country.flags.svg} alt={country.name.common} />
-        <span className="country-code">{country.cca3}</span>
+        <img src={country.flag?.url_svg} alt={country.names?.common} />
+        <span className="country-code">{country.codes?.alpha_3}</span>
       </div>
 
       <div className="country-content">
-        <h3>{country.name.common}</h3>
+        <h3>{country.names?.common}</h3>
 
         <div className="country-meta">
           <div>
@@ -25,7 +25,7 @@ function CountryCard({
           </div>
           <div>
             <span>CAPITAL</span>
-            <p>{country.capital?.[0] || "No Capital"}</p>
+            <p>{country.capitals?.[0]?.name || "No Capital"}</p>
           </div>
         </div>
 
@@ -34,7 +34,7 @@ function CountryCard({
             className={isStamped ? "stamped-active" : ""}
             onClick={(e) => {
               e.stopPropagation();
-              onToggleStamp(country.cca3);
+              onToggleStamp(country.codes?.alpha_3);
             }}
           >
             {isStamped ? "STÄMPLAD" : "STÄMPLA"}
@@ -44,7 +44,7 @@ function CountryCard({
             className={isWishlisted ? "star-active" : ""}
             onClick={(e) => {
               e.stopPropagation();
-              onToggleWishlist(country.cca3);
+              onToggleWishlist(country.codes?.alpha_3);
             }}
           >
             {isWishlisted ? "★" : "☆"}
