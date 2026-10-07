@@ -35,7 +35,7 @@
 
 Make sure you have the following installed before running the project, if needed click the links provided to download:
 
-- **Node.js** (version 18 or higher) – (https://nodejs.org) 
+- **Node.js** (version 20.19+ or 22+ required by Vite) – (https://nodejs.org)
 - **npm** (comes bundled with Node.js)
 - **Git** – (https://git-scm.com)
 
@@ -53,7 +53,7 @@ git --version
 
 **1. Clone the repository**
 ```bash
-git clone  https://github.com/ShiBzOk/digital-passport
+git clone https://github.com/ShiBzOk/digital-passport.git
 ```
 
 **2. Navigate into the project folder**
@@ -61,17 +61,23 @@ git clone  https://github.com/ShiBzOk/digital-passport
 cd digital-passport
 ```
 
-**3. Install dependencies**
+**3. Configure environment variable** - 
+Create a .env file in the root directory and add your API key (provided via Canvas):
+```bash
+echo "VITE_API_KEY=YOUR_API_KEY_HERE" > .env
+```
+
+**4. Install dependencies**
 ```bash
 npm install
 ```
 
-**4. Start the development server**
+**5. Start the development server**
 ```bash
 npm run dev
 ```
 
-**5. Open the app in your browser**
+**6. Open the app in your browser**
 http://localhost:5173
 
 
@@ -80,12 +86,19 @@ http://localhost:5173
 
 ## API
 
-**REST Countries API** – https://restcountries.com/v3.1
+**REST Countries API – https://restcountries.com/**
 
-The app fetches all country data once on startup using the following URL:
-https://restcountries.com/v3.1/all?fields=name,capital,region,maps,population,timezones,flags,currencies,cca3
+The app fetches country data on initial load using the following endpoint:
+GET [https://api.restcountries.com/countries/v5?limit=100](https://api.restcountries.com/countries/v5?limit=100)
 
+**Authentication**
 
+Requests require an API key sent as a Bearer token in the Authorization header:
+```javascript
+headers: {
+  Authorization: `Bearer ${import.meta.env.VITE_API_KEY}`
+}
+```
 User data is stored in localStorage under two keys:
 - `stampedCountries` – array of visited country codes (e.g. `["SWE", "JPN"]`)
 - `wishlistCountries` – array of bucket list country codes 
@@ -105,11 +118,11 @@ User data is stored in localStorage under two keys:
 ## Framework Comparison
 
 
-***Why not Vue? Vue is known for being easy to learn and beginner friendly. Compared to React, it has a smaller ecosystem and is used less frequently in the industry, which means there are fewer libraries, resources, and community support available [1].
+**Why not Vue?** Vue is known for being easy to learn and beginner friendly. Compared to React, it has a smaller ecosystem and is used less frequently in the industry, which means there are fewer libraries, resources, and community support available [1].
 
-***Why not Angular? Angular is a powerful framework with many built-in features, but it has a steeper learning curve than React. For this project, it would have added unnecessary depth and more functionality than we needed [1].
+**Why not Angular?** Angular is a powerful framework with many built-in features, but it has a steeper learning curve than React. For this project, it would have added unnecessary depth and more functionality than we needed [1].
 
-***Why React? We chose React because it provides a good balance between simplicity and flexibility. According to the Stack Overflow Developer Survey 2025, React is one of the most common web libraries and frameworks among developers according to the Stack Overflow Developer Survey 2025 [1]. It also has a detailed documentation and community support. 
+**Why React?** We chose React because it provides a good balance between simplicity and flexibility. According to the Stack Overflow Developer Survey 2025, React is one of the most common web libraries and frameworks among developers according to the Stack Overflow Developer Survey 2025 [1]. It also has a detailed documentation and community support. 
 
 Another important reason is that React was the library used during this course, allowing us to build on the knowledge we had already gained. This also helped us continue our learning, as we are still new to the framework.
 
